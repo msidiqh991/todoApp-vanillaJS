@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+    /* ==== Colors theme ==== */
+    --first-color: #fbc531;
+    --first-color-alter: #e0b02c;
+    --alt-color: #8f8f8f;
+
+    /* ==== Typography ==== */
+    --body-font: 'Raleway', sans-serif;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --medium-font-size: 1.1rem;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--first-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--first-color-alter);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Raleway, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper .container {
+    width: 100%;
+    max-width: 50%;
+    border-radius: 8px;
+    margin: 2rem auto 0;
+    padding: 20px;
+    flex-grow: 1;
+    height: fit-content;
+}
+
+.container-footer {
+    font-size: var(--small-font-size);
+    padding: 20px;
+    color: var(--alt-color);
+    overflow: hidden;
+}
+
+.title-header {
+    font-size: var(--small-font-size);
+    color: var(--alt-color);
+}
+
+.title-app {
+    color: var(--first-color);
+}
+
+.item {
+    border-radius: 16px;
+    margin-top: 16px;
+    padding: 12px 24px 12px 24px;
+    background: white;
+    display: flex;
+    align-items: center;
+}
+
+.item > .inner h2 {
+    margin-bottom: unset;
+    font-size: var(--medium-font-size);
+    color: var(--first-color);
+}
+
+.item > .inner p {
+    margin-top: 5px;
+}
+
+.form {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    height: 300px;
+    border-radius: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    color: #adadad;
+}
+
+.form-group label {
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.shadow {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type=text], input[type=date] {
+    font-family: var(--body-font);
+    background: #F5F1FF;
+    border: 2px solid var(--first-color);
+    border-radius: 8px;
+    padding: 16px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    font-size: var(--normal-font-size);
+    color: var(--alt-color);
+    font-weight: 600;
+}
+
+.btn-submit {
+    width: fit-content;
+    font-family: var(--body-font);
+    border-radius: 8px;
+    padding: 12px 24px;
+    border: 2px solid var(--first-color);
+    color: var(--first-color);
+    font-size: var(--medium-font-size);
+    background: none;
+    font-weight: 800;
+    margin-top: auto;
+    align-self: flex-end;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-submit:hover {
+    background: var(--first-color);
+    color: white;
+}
+
+input[type=text], input[type=date], .btn-submit:focus {
+    outline: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.form-title {
+    margin: auto 0;
+}
+
+.form-title label {
+    font-size: var(--normal-font-size);
+}
+
+.check-button {
+    width: 30px;
+    height: 30px;
+
+    background: url('../assets/check-outline.svg');
+    background-size: contain;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+    transition: .5s;
+}
+
+.check-button:hover {
+    background: url('../assets/check-solid.svg');
+    background-size: contain;
+    transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+}
+
+.trash-button {
+    width: 25px;
+    height: 25px;
+
+    background: url('../assets/trash-outline.svg');
+    background-size: contain;
+    margin-left: 16px;
+    cursor: pointer;
+    border: none;
+    transition: .5s;
+}
+
+.trash-button:hover {
+    background: url('../assets/trash-fill.svg');
+    background-size: contain;
+}
+
+.undo-button {
+    width: 25px;
+    height: 25px;
+
+    background: url('../assets/undo-ouline.svg');
+    background-size: contain;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+    transition: .5s;
+}
+
+.undo-button:hover {
+    background: url('../assets/undo-ouline.svg');
+    background-size: contain;
+    transform:rotate(-360deg);
+    -ms-transform:rotate(-360deg);
+    -webkit-transform:rotate(-360deg);
+}
+
+.check-button:focus, .trash-button {
+    outline: none;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .wrapper {
+        margin: 0;
+        padding: 20px;
+    }
+
+    .wrapper .container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .list-item {
+        width: 100%;
+    }
+
+    .form {
+        width: 100%;
+    }
+}
