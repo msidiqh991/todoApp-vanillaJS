@@ -9,7 +9,7 @@
     /* ==== Typography ==== */
     --body-font: 'Raleway', sans-serif;
     --normal-font-size: .938rem;
-    --small-font-size: .813rem;
+    --small-font-size: .763rem;
     --medium-font-size: 1.1rem;
 }
 
@@ -47,19 +47,14 @@ html, body {
     margin: 2rem auto 0;
     padding: 20px;
     flex-grow: 1;
+    background: #fffff4;
     height: fit-content;
-}
-
-.container-footer {
-    font-size: var(--small-font-size);
-    padding: 20px;
-    color: var(--alt-color);
-    overflow: hidden;
 }
 
 .title-header {
     font-size: var(--small-font-size);
-    color: var(--alt-color);
+    color: var(--first-color-alter);
+    padding: 20px;
 }
 
 .title-app {
@@ -173,7 +168,6 @@ input[type=text], input[type=date], .btn-submit:focus {
 
 .check-button:hover {
     background: url('../assets/check-solid.svg');
-    background-size: contain;
     transform:rotate(360deg);
     -ms-transform:rotate(360deg);
     -webkit-transform:rotate(360deg);
@@ -193,7 +187,6 @@ input[type=text], input[type=date], .btn-submit:focus {
 
 .trash-button:hover {
     background: url('../assets/trash-fill.svg');
-    background-size: contain;
 }
 
 .undo-button {
@@ -210,7 +203,6 @@ input[type=text], input[type=date], .btn-submit:focus {
 
 .undo-button:hover {
     background: url('../assets/undo-ouline.svg');
-    background-size: contain;
     transform:rotate(-360deg);
     -ms-transform:rotate(-360deg);
     -webkit-transform:rotate(-360deg);
@@ -218,6 +210,10 @@ input[type=text], input[type=date], .btn-submit:focus {
 
 .check-button:focus, .trash-button {
     outline: none;
+}
+
+.check-button, .undo-button, .trash-button {
+    background-repeat: no-repeat;
 }
 
 
