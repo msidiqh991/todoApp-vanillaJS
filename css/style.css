@@ -115,6 +115,7 @@ input[type=text], input[type=date] {
     font-size: var(--normal-font-size);
     color: var(--alt-color);
     font-weight: 600;
+    caret-color: var(--first-color-alter);
 }
 
 .btn-submit {
