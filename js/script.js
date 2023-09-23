@@ -201,6 +201,14 @@ document.addEventListener('DOMContentLoaded', function() {
         loadDataFromStorage();
     }
 
+    // Validasi nilai length task
+    if(!updateTaskCount) {
+        const taskValueLength = document.getElementById('taskValue');
+        taskValueLength.innerText = !todos.isCompleted.length;
+    } else {
+        updateTaskCount();
+    }
+
     /* Memperbarui data pada storage secara langsung,
     dan mengambil data dari local storage */
     document.addEventListener(SAVED_EVENT, function() {
