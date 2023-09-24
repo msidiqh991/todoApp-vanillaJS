@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateTaskCount();
         document.dispatchEvent(new Event(RENDER_EVENT));
+        ToastMessage();
         saveData();
     }
 
@@ -65,6 +66,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const taskValue = document.getElementById('taskValue');
         taskValue.innerText = uncompletedCount;
+    }
+
+    // toast message show when items increase
+    function ToastMessage(){
+        const toastElement = document.createElement('div');
+        toastElement.id = 'toastMessage';
+        toastElement.innerText = 'Rencana berhasil dibuat!';
+        document.body.appendChild(toastElement);
+
+        const getToast = document.getElementById('toastMessage');
+        getToast.className = 'showToast';
+        setTimeout(() => {
+            getToast.className = getToast.className.replace('showToast', '');
+        }, 3000);
     }
 
     function addTaskToCompleted(todoId){
@@ -201,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loadDataFromStorage();
     }
 
-    // Validasi nilai length task
+    // Recursive validasi jumlah task
     if(!updateTaskCount) {
         const taskValueLength = document.getElementById('taskValue');
         taskValueLength.innerText = !todos.isCompleted.length;
@@ -209,8 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTaskCount();
     }
 
-    /* Memperbarui data pada storage secara langsung,
-    dan mengambil data dari local storage */
+    // Memperbarui, mengambil data dari local storage
     document.addEventListener(SAVED_EVENT, function() {
         console.log(localStorage.getItem(STORAGE_KEY));
     });
