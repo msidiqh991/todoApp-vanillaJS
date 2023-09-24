@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         textTitle.innerText = todoObject.task;
        
         const textTimestamp = document.createElement('p');
-        textTimestamp.innerText = todoObject.timestamp;
+        textTimestamp.innerText = 'Batas waktu : ' + todoObject.timestamp;
        
         const textContainer = document.createElement('div');
         textContainer.classList.add('inner');
@@ -149,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
         container.append(textContainer);
         container.setAttribute('id', `todo-${todoObject.id}`);
 
-        // Validasi option
         if(todoObject.isCompleted) {
             const undoButton = document.createElement('button');
             undoButton.classList.add('undo-button');
